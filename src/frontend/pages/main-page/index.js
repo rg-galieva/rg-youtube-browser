@@ -19,7 +19,7 @@ class MainPage extends Component {
     }
 
     componentDidMount() {
-        this.getVideos('ocean')
+        this.getVideos('sense8')
     }
 
     getVideos(search_term) {
@@ -29,6 +29,10 @@ class MainPage extends Component {
                 selected_video: video_list[0]
             })
         })
+    }
+
+    onSearchChanged = (search_term) => {
+        this.getVideos(search_term);
     }
 
     render() {
@@ -43,7 +47,7 @@ class MainPage extends Component {
                         <VideoFull video={this.state.selected_video}/>
                     </div>
                     <div className={s.video_list}>
-                        <SearchBar/>
+                        <SearchBar onSearchChanged={this.onSearchChanged} />
 
                         <VideoList video_list={this.state.video_list} onVideoSelect={this.onVideoSelect}/>
                     </div>

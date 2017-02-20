@@ -2,16 +2,28 @@ import React, {Component} from 'react'
 import s from './_styles.css'
 
 class SearchBar extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             search_term: ''
         }
     }
 
+    getVideos = (ev) => {
+        ev.preventDefault()
+        this.props.onSearchChanged(this.state.search_term)
+    }
+
     render() {
-        return <input type="text" value={this.state.search_term} onChange={this.onInputChange} className={s.search_input} placeholder="Search"/>
+        return (
+            <form onSubmit={this.getVideos}>
+                <input type="text" value={this.state.search_term}
+                            className={s.search_input}
+                            placeholder="Search"
+                            onChange={this.onInputChange}/>
+            </form>
+        )
     }
 
     onInputChange = (ev) => {
