@@ -1,0 +1,11 @@
+@import "../../assets/styles/vars.gcss";
+
+.search_input {
+  display: block;
+  width: 100%;
+  border: none;
+  line-height: 2rem;
+  padding: 0 .5rem;
+  margin-bottom: 1rem;
+  background: #f7f7f7;
+}

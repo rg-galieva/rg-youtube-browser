@@ -1,0 +1,39 @@
+@import "../../assets/styles/vars.gcss";
+
+.post {
+  margin-bottom: calc(80rem/16);
+  font-family: 'Poppins', sans-serif;
+}
+
+.post_image {
+  position: relative;
+  min-height: 20rem;
+  margin-bottom: 2rem;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+
+  & iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.post_info {
+  & > a {
+    color: var(--c_txt);
+    text-decoration: none;
+  }
+
+  & > a:hover {
+    color: var(--c_link);
+  }
+
+  & > h4 {
+    font-weight: var(--f_bold);
+  }
+}
+
+.desc {
+  margin: calc(20rem/16) 0 calc(40rem/16);
+  font-weight: var(--f_light);
+}

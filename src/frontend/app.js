@@ -1,5 +1,5 @@
-import React from 'react';
-import { render } from 'react-dom';
-import routesApp from './routes'
+import React, {Component} from 'react';
+import {render} from 'react-dom';
+import MainPage from './pages/main-page'
 
-render(routesApp, document.getElementById('app'));
+render(<MainPage/>, document.getElementById('app'));
