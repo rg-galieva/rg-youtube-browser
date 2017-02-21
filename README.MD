@@ -1,4 +1,3 @@
-This app allows you to search throw all youtube videos. 
 ![alt tag] (http://cdn.reginaradium.com/img/rg-youtube-browser.png)
 
 ## TechStack
@@ -8,10 +7,10 @@ This app allows you to search throw all youtube videos.
 - axios
 - lodash
 
-##Components
-- search-bar
-- video-list
-- video-
+##Features
+- search
+- list of videos
+- detailed view of the video
 
-## Youtube Docs
+### Youtube Docs
 https://developers.google.com/youtube/v3/docs/search/list
