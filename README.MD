@@ -1,13 +1,17 @@
-THIS DOCUMENT IS IN PROGRESS. THIS PARAGRAPH SHALL BE REMOVED WHEN THIS DOCUMENT IS DONE.
+This app allows you to search throw all youtube videos. 
+![alt tag] (http://cdn.reginaradium.com/img/rg-youtube-browser.png)
 
+## TechStack
+- react
 - webpack v2
-- yarn (package manager) as alternative to npm 
-- react-router v3
-- postcss/cssnext with extract text plugin and manifest.json
+- youtube search:list
+- axios
+- lodash
 
+##Components
+- search-bar
+- video-list
+- video-
 
-
-## List of youtube videos
-
-Requesting 
+## Youtube Docs
 https://developers.google.com/youtube/v3/docs/search/list

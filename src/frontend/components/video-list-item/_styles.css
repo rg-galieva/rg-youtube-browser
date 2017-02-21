@@ -5,12 +5,12 @@
   flex-direction: row;
   align-content: space-between;
   align-items: stretch;
-  margin-bottom: 1rem;
+  margin-bottom: .75rem;
   font-family: 'Poppins', sans-serif;
 }
 
 .post_info {
-  flex: 7;
+  flex: 8;
   order: 2;
   padding-left: calc(100% / 14);
 
@@ -29,7 +29,7 @@
 }
 
 .post_image {
-  flex: 5;
+  flex: 4;
   order: 1;
 
   & img {
