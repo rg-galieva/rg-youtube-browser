@@ -10,14 +10,9 @@ class SearchBar extends Component {
         }
     }
 
-    getVideos = (ev) => {
-        ev.preventDefault()
-        this.props.onSearchChanged(this.state.search_term)
-    }
-
     render() {
         return (
-            <form onSubmit={this.getVideos}>
+            <form onSubmit={this.onSubmitSearch}>
                 <input type="text" value={this.state.search_term}
                             className={s.search_input}
                             placeholder="Search"
@@ -26,10 +21,18 @@ class SearchBar extends Component {
         )
     }
 
+    onSubmitSearch = (ev) => {
+        ev.preventDefault();
+        this.props.onSearchChanged(this.state.search_term)
+    }
+
     onInputChange = (ev) => {
+        ev.preventDefault();
+
         this.setState({
             search_term: ev.target.value
-        })
+        });
+        this.props.onSearchChanged(ev.target.value)
     }
 }
 

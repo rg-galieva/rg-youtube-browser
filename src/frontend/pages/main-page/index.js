@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import _ from 'lodash'
 import GET_YT_VIDEOS from '../../components/youtube-api'
 import s from './_styles.css'
 import SearchBar from '../../components/search-bar'
@@ -7,6 +8,7 @@ import VideoFull from '../../components/video-full'
 import s_glob from '../../assets/styles/common.gcss'
 
 const YOUTUBE_API_KEY = 'AIzaSyDQ2U7JCsaxQ5THm-PwqP-I8bo8yB7i4YY';
+const DEFAULT_TERM = 'sense8';
 
 class MainPage extends Component {
     constructor(props) {
@@ -19,11 +21,13 @@ class MainPage extends Component {
     }
 
     componentDidMount() {
-        this.getVideos('sense8')
+        this.getVideos(DEFAULT_TERM)
     }
 
     getVideos(search_term) {
-        GET_YT_VIDEOS({key: YOUTUBE_API_KEY, term: search_term}, (video_list) => {
+        let term = (search_term) ? search_term : DEFAULT_TERM;
+
+        GET_YT_VIDEOS({key: YOUTUBE_API_KEY, term: term}, (video_list) => {
             this.setState({
                 video_list: video_list,
                 selected_video: video_list[0]
@@ -31,15 +35,15 @@ class MainPage extends Component {
         })
     }
 
-    onSearchChanged = (search_term) => {
+    onSearchChanged = _.debounce((search_term) => {
         this.getVideos(search_term);
-    }
+    }, 250)
 
     render() {
         return (
             <div className={s.wrap}>
                 <header>
-                    <a href="/" className={s.logo}>Radium Videobrowser</a>
+                    <a href="/" className={s.logo}>RG Youtube</a>
                 </header>
 
                 <main className={s.video_wrap}>
@@ -54,7 +58,7 @@ class MainPage extends Component {
                 </main>
 
                 <footer>
-                    <p>&copy; 2017 Regina Radium</p>
+                    <p>&copy; 2017 Regina Galieva</p>
                 </footer>
             </div>
         );

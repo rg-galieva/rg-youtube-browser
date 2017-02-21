@@ -1,11 +1,11 @@
 {
-  "name": "rg-video-browser",
+  "name": "rg-youtube-browser",
   "version": "1.0.0",
   "main": "src/frontend/app.js",
-  "author": "Regina Radium",
+  "author": "Regina Galieva",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/reginaradium/rg-video-browser.git",
+    "url": "https://github.com/rg-galieva/rg-video-browser.git",
     "type": "git"
   },
   "scripts": {
@@ -14,9 +14,7 @@
     "build:prod": "webpack --env=prod --progress --profile --colors"
   },
   "keywords": [
-    "webpack v2",
-    "react",
-    "youtube"
+    "react", "youtube api search", "axios", "lodash"
   ],
   "devDependencies": {
     "babel-core": "^6.22.1",
@@ -41,6 +39,7 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "lodash": "^4.17.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   }
