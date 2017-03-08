@@ -5,13 +5,14 @@
   "author": "Regina Galieva",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/rg-galieva/rg-video-browser.git",
+    "url": "https://github.com/rg-galieva/rg-youtube-browser.git",
     "type": "git"
   },
   "scripts": {
     "dev": "webpack-dev-server --env=dev --hot --inline",
     "build:dev": "webpack --env=dev --progress --profile --colors",
-    "build:prod": "webpack --env=prod --progress --profile --colors"
+    "build:prod": "webpack --env=prod --progress --profile --colors",
+    "deploy:surge": "yarn build:prod && cd dist && mv index.html 200.html && surge ./"
   },
   "keywords": [
     "react", "youtube api search", "axios", "lodash"
@@ -22,6 +23,8 @@
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-2": "^6.22.0",
+    "clean-webpack-plugin": "^0.1.15",
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "2.0.0",
     "file-loader": "^0.10.0",

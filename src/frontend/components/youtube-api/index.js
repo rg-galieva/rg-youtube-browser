@@ -11,7 +11,8 @@ export default function (options, callback) {
         part: 'snippet',
         key: options.key,
         q: options.term,
-        type: 'video'
+        type: 'video',
+        maxResults: 6
     };
 
     axios.get(ROOT_URL, {params: params})

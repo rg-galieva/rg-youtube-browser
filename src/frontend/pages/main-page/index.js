@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import _ from 'lodash'
 import GET_YT_VIDEOS from '../../components/youtube-api'
 import s from './_styles.css'
+import Menu from '../../components/menu'
 import SearchBar from '../../components/search-bar'
 import VideoList from '../../components/video-list'
 import VideoFull from '../../components/video-full'
@@ -43,7 +44,8 @@ class MainPage extends Component {
         return (
             <div className={s.wrap}>
                 <header>
-                    <a href="/" className={s.logo}>RG Youtube</a>
+                    <a href="/" className={s.logo}>RG <mark>Youtube</mark></a>
+                    <Menu />
                 </header>
 
                 <main className={s.video_wrap}>
@@ -58,7 +60,9 @@ class MainPage extends Component {
                 </main>
 
                 <footer>
-                    <p>&copy; 2017 Regina Galieva</p>
+                    <nav>
+                        <a href="https://developers.google.com/youtube/v3/docs/search/list" target="_blank">Youtube Docs</a>
+                    </nav>
                 </footer>
             </div>
         );
