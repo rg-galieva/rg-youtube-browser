@@ -1,6 +1,7 @@
 const {resolve} = require('path');
 const webpackMerge = require('webpack-merge');
 const commonConfig = require('./common.js');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = function (env) {
     return webpackMerge(commonConfig(), {
@@ -15,6 +16,13 @@ module.exports = function (env) {
             compress: true,
             port: 5050,
             noInfo: true
-        }
+        },
+			plugins: [
+				new Dotenv({
+					path: './.env',
+					safe: true,
+					systemvars: true
+				})
+			]
     })
 }

@@ -22,6 +22,9 @@ module.exports = function (env) {
                     NODE_ENV: JSON.stringify("production")
                 }
             }),
+					new webpack.DefinePlugin({
+						"process.env.YOUTUBE_API_KEY": JSON.stringify(process.env.YOUTUBE_API_KEY)
+					}),
             new CleanWebpackPlugin(['dist', 'build'], {
                 root: process.cwd(),
                 verbose: true,

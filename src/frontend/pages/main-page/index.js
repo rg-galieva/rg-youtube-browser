@@ -8,7 +8,7 @@ import VideoList from '../../components/video-list'
 import VideoFull from '../../components/video-full'
 import s_glob from '../../assets/styles/common.gcss'
 
-const YOUTUBE_API_KEY = 'AIzaSyCR8uDkz0GAcPFrW55JjTZJH5cSaa8iYyA';
+const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 const DEFAULT_TERM = 'sense8';
 
 class MainPage extends Component {
