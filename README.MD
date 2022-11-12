@@ -1,5 +1,4 @@
 React-only static page with youtube-search
-Check out live preview: [rg-youtube-app](http://rg-youtube-app.surge.sh/)
 
  
 ![alt text](https://cdn.rg-galieva.com/img/rg-youtube-browser.jpg "RG YOUTUBE APP")
